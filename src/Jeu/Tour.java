@@ -1,4 +1,4 @@
-package Partie1;
+package Jeu;
 
 public class Tour extends Piece{
 	
@@ -9,14 +9,14 @@ public class Tour extends Piece{
 	
 	public boolean estValide(Position depart, Position arrivee)
 	{
+		if(depart == arrivee) //Également, on considère un déplacement nul ( depart = arrivee ) comme étant VALIDE.
+			return true;
 		//Si la position de la ligne de départ est égale à celle d'arrivée,
 		//OU la position de la colonne de départ est égale à celle d'arrivée.
 		if (depart.getLigne() == arrivee.getLigne() || depart.getColonne() == arrivee.getColonne())
 			return true;
-		else if(depart == arrivee) //Également, on considère un déplacement nul ( depart = arrivee ) comme étant VALIDE.
-			return true;
-		else
-			return false;
+
+		return false;
 	}
 
 }

@@ -1,4 +1,4 @@
-package Partie1;
+package Jeu;
 
 /* classe abstraite Piece */
 
@@ -49,6 +49,7 @@ public double norme (Position depart, Position arrivee)
   {
   return Math.pow((depart.getLigne()-arrivee.getLigne()), 2)+ Math.pow((depart.getColonne() - arrivee.getColonne()),2);
   }
+
 /* méthode abstraite à implémenter dans chacune des sous - classes */
 
 public abstract boolean estValide (Position depart, Position arrivee);

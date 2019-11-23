@@ -1,4 +1,4 @@
-package Partie1;
+package Jeu;
 
 public class Reine extends Piece{
 	
@@ -9,15 +9,15 @@ public class Reine extends Piece{
 	
 	public boolean estValide(Position depart, Position arrivee) 
 	{
+		if(depart == arrivee) //Également, on considère un déplacement nul ( depart = arrivee ) comme étant VALIDE.
+			return true;
 		//Méthode estValide() de classe Fou 
 		if (Math.abs(depart.getLigne() - arrivee.getLigne()) == Math.abs(depart.getColonne() - arrivee.getColonne())) 
 			return true;
-		else if (depart.getLigne() == arrivee.getLigne() || depart.getColonne() == arrivee.getColonne()) //Méthode estValide() de classe Tour
+		if (depart.getLigne() == arrivee.getLigne() || depart.getColonne() == arrivee.getColonne()) //Méthode estValide() de classe Tour
 			return true;
-		else if(depart == arrivee) //Également, on considère un déplacement nul ( depart = arrivee ) comme étant VALIDE.
-			return true;
-		else
-			return false;
+
+		return false;
 	}
 
 }

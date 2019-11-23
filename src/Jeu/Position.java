@@ -1,4 +1,4 @@
-package Partie1;
+package Jeu;
 
 public class Position 
 {

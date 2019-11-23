@@ -1,4 +1,4 @@
-package Partie1;
+package Jeu;
 
 public class Roi extends Piece{
 	
@@ -9,13 +9,13 @@ public class Roi extends Piece{
 	
 	public boolean estValide(Position depart, Position arrivee)
 	{
+		if(depart == arrivee) //Également, on considère un déplacement nul ( depart = arrivee ) comme étant VALIDE.
+			return true;
 		//Si le calcul de la norme() = 1 (déplacement vertical/horizontal) ou = 2 (déplacement diagonal)
 		if (norme(depart, arrivee) == 1 || norme(depart, arrivee) == 2) 
 			return true;
-		else if(depart == arrivee) //Également, on considère un déplacement nul ( depart = arrivee ) comme étant VALIDE.
-			return true;
-		else 
-			return false;
+		
+		return false;
 	}
 
 }
