@@ -9,9 +9,9 @@ public class Cavalier extends Piece {
 	
 	public boolean estValide(Position depart, Position arrivee)
 	{
-		if(depart == arrivee) //Également, on considère un déplacement nul ( depart = arrivee ) comme étant VALIDE.
+		if(depart == arrivee) //Egalement, on considere un deplacement nul ( depart = arrivee ) comme etant VALIDE.
 			return true;
-		//Si la norme des positions de départ de d'arrivée du cavalier est égale à 5
+		//Si la norme des positions de depart de d'arrivee du cavalier est egale a 5
 		if (norme(depart, arrivee) == 5) 
 			return true;
 		else	

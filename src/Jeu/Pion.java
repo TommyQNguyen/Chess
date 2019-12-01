@@ -2,7 +2,7 @@ package Jeu;
 
 public class Pion extends Piece{
 	
-	//private boolean premierMouvement = true; //Boolean qui vérifie si la pièce a fait son premier mouvement ou non
+	//private boolean premierMouvement = true; //Boolean qui verifie si la piece a fait son premier mouvement ou non
 	
 	public Pion (String nom, String couleur)
 	{
@@ -12,7 +12,7 @@ public class Pion extends Piece{
 	
 	public boolean estValide(Position depart, Position arrivee)
 	{
-		if(depart == arrivee) return true;//Également, on considère un déplacement nul ( depart = arrivee ) comme étant VALIDE.
+		if(depart == arrivee) return true;//Egalement, on considere un deplacement nul ( depart = arrivee ) comme etant VALIDE.
 	
 		switch (getCouleur()) {
 			case "blanc":

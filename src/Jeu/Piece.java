@@ -9,7 +9,7 @@ private String couleur;
 /** 
 constructeur permettant d'initialiser le nom et la couleur d'un objet Piece
 nom  le nom de la piece
-couleur la couleur de la pièce
+couleur la couleur de la piece
 */
 public Piece (String nom, String couleur)
 {
@@ -37,12 +37,12 @@ public void setCouleur ( String couleur )
   if (( couleur == "noir" ) || ( couleur == "blanc" ))
     this.couleur = couleur;
   }
- /* norme mathématique entre cette Position et une autre */
+ /* norme mathematique entre cette Position et une autre */
 /** 
-*méthode permettant de calculer la norme mathématique entre deux Position 
-*depart  la position de départ d'une Piece
+*methode permettant de calculer la norme mathematique entre deux Position 
+*depart  la position de depart d'une Piece
 *arrivee la position d'arrivee d'Une Piece
-*la somme des carrés des distances
+*la somme des carres des distances
 *
 */
 public double norme (Position depart, Position arrivee)
@@ -50,7 +50,7 @@ public double norme (Position depart, Position arrivee)
   return Math.pow((depart.getLigne()-arrivee.getLigne()), 2)+ Math.pow((depart.getColonne() - arrivee.getColonne()),2);
   }
 
-/* méthode abstraite à implémenter dans chacune des sous - classes */
+/* methode abstraite a implementer dans chacune des sous - classes */
 
 public abstract boolean estValide (Position depart, Position arrivee);
 

@@ -9,12 +9,12 @@ public class Reine extends Piece{
 	
 	public boolean estValide(Position depart, Position arrivee) 
 	{
-		if(depart == arrivee) //Également, on considère un déplacement nul ( depart = arrivee ) comme étant VALIDE.
+		if(depart == arrivee) //Egalement, on considere un deplacement nul ( depart = arrivee ) comme etant VALIDE.
 			return true;
-		//Méthode estValide() de classe Fou 
+		//Methode estValide() de classe Fou 
 		if (Math.abs(depart.getLigne() - arrivee.getLigne()) == Math.abs(depart.getColonne() - arrivee.getColonne())) 
 			return true;
-		if (depart.getLigne() == arrivee.getLigne() || depart.getColonne() == arrivee.getColonne()) //Méthode estValide() de classe Tour
+		if (depart.getLigne() == arrivee.getLigne() || depart.getColonne() == arrivee.getColonne()) //Methode estValide() de classe Tour
 			return true;
 
 		return false;

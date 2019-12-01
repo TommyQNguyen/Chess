@@ -9,10 +9,10 @@ public class Tour extends Piece{
 	
 	public boolean estValide(Position depart, Position arrivee)
 	{
-		if(depart == arrivee) //Également, on considère un déplacement nul ( depart = arrivee ) comme étant VALIDE.
+		if(depart == arrivee) //Egalement, on considere un deplacement nul ( depart = arrivee ) comme etant VALIDE.
 			return true;
-		//Si la position de la ligne de départ est égale à celle d'arrivée,
-		//OU la position de la colonne de départ est égale à celle d'arrivée.
+		//Si la position de la ligne de depart est egale a celle d'arrivee,
+		//OU la position de la colonne de depart est egale a celle d'arrivee.
 		if (depart.getLigne() == arrivee.getLigne() || depart.getColonne() == arrivee.getColonne())
 			return true;
 

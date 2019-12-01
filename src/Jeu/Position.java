@@ -3,8 +3,8 @@ package Jeu;
 public class Position 
 {
 
-private int ligne ; // de 0 à 7 voir schéma
-private int colonne; // de 0 à 7
+private int ligne ; // de 0 a 7 voir schema
+private int colonne; // de 0 a 7
 
 
   public Position(int ligne, int colonne)
