@@ -21,7 +21,8 @@ public class Pion extends Piece{
 						return arrivee.getLigne() == depart.getLigne() + 1 || arrivee.getLigne() == depart.getLigne() + 2;
 				}
 				else if (depart.getLigne() != 1) {
-					return arrivee.getLigne() == depart.getLigne() + 1;
+					if (depart.getColonne() == arrivee.getColonne())
+						return arrivee.getLigne() == depart.getLigne() + 1;
 				}
 				break;
 	
@@ -31,6 +32,7 @@ public class Pion extends Piece{
 						return arrivee.getLigne() == depart.getLigne() - 1 || arrivee.getLigne() == depart.getLigne() - 2;
 				}
 				else if (depart.getLigne() != 6) {
+					if (depart.getColonne() == arrivee.getColonne())
 						return arrivee.getLigne() == depart.getLigne() - 1;
 				}
 				

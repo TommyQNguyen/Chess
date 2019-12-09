@@ -52,6 +52,11 @@ public Case getCase ( int ligne, int colonne )
 return location[ligne][colonne];
 }
 
+public Case getCase(Position position) 
+{
+	return getCase(position.getLigne(), position.getColonne());
+}
+
 //Méthode à compléter 
 public boolean captureParUnPionPossible ( Position depart,Position arrivee )
 {
@@ -225,7 +230,7 @@ public boolean promotionPossible (Position depart, Position arrivee)
 	
 	return false;
 }
-
+/*
 	public static void main ( String [] args )
 	{
 		Echiquier e = new Echiquier ();
@@ -233,7 +238,7 @@ public boolean promotionPossible (Position depart, Position arrivee)
 		System.out.println(e.afficher());
 	
 		
-	}
+	}*/
 }
 
 

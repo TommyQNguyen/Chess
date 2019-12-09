@@ -34,6 +34,10 @@ public boolean estOccupee()
 //Vérifier si la prochaine position contient (oui ou non) une pièce de la même couleur que la pièce à déplacer
   public boolean estOccupee(String couleur)
   {
+	  if(piece == null) {
+		  return false;
+	  }
+	  
 	  if (piece.getCouleur() == couleur)
 		  return false;
 	  else
