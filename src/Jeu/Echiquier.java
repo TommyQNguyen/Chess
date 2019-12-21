@@ -205,14 +205,7 @@ public String afficher() {
 	}
 	return s;
 }
-/*public boolean roquePossible (Position depart, Position arrivee ) 
-{
-}
 
-public boolean priseEnPassantPossible( Position depart, Position arrivee )
-{
-}
-*/
 public boolean promotionPossible (Position depart, Position arrivee)
 {
 	if(getCase(depart.getLigne(), depart.getColonne()).getPiece().getNom().charAt(0) != 'p') //Si ce n'est pas un pion
@@ -230,15 +223,6 @@ public boolean promotionPossible (Position depart, Position arrivee)
 	
 	return false;
 }
-/*
-	public static void main ( String [] args )
-	{
-		Echiquier e = new Echiquier ();
-		e.debuter();
-		System.out.println(e.afficher());
-	
-		
-	}*/
 }
 
 

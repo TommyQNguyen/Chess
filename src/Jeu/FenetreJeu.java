@@ -120,8 +120,7 @@ public class FenetreJeu extends JFrame
 //  String couleurControle = "blanc";
   public void mouseClicked(MouseEvent eve)
   {
-	  System.out.println("click");
-  if ( eve.getSource() == boutonDebuter )
+	if ( eve.getSource() == boutonDebuter )
     {
     e.debuter();
     tab[0][0].setIcon ( new ImageIcon ("C:\\Temp\\Icones\\TB.gif"));
@@ -164,27 +163,15 @@ public class FenetreJeu extends JFrame
         }
       }
     champTexte.setText(couleurControle);
-	//SUIVRE LES ÉTAPES DU DOCUMENT FOURNI SUR LÉA
+    
     // 1er cas :
-    
-//    if(e.getCase(ligneClic, colonneClic).getPiece() != null) //Si la piece existe
-//    {	
-//    	//Si la couleur de la piece est la meme que la couleur du champ de texte (
-//    	if(!e.getCase(ligneClic, colonneClic).getPiece().getCouleur().equals(champTexte.getText())) {
-//    		System.out.println("ugnugnu");
-//    		return;
-//    	}
-//    }
-    
     if (e.getCase(ligneClic, colonneClic).estOccupee() && pieceTampon == null)	{		//clique sur une case occupee , tampon vide : case Depart
-    	System.out.println("first case \n\n");
     	if (pieceTampon == null)
 		{ 
     		if(e.getCase(ligneClic, colonneClic).getPiece() != null) //Si la piece existe
     	    {	
     	    	//Si la couleur de la piece est la meme que la couleur du champ de texte (
     	    	if(!e.getCase(ligneClic, colonneClic).getPiece().getCouleur().equals(champTexte.getText())) {
-    	    		System.out.println("ugnugnu");
     	    		return;
     	    	}
     	    }
@@ -201,7 +188,6 @@ public class FenetreJeu extends JFrame
     if(!e.getCase(ligneClic, colonneClic).estOccupee() && pieceTampon != null)
     {
     	arrivee = new Position(ligneClic, colonneClic); 									   //initialiser position d'arrivée
-    	System.out.println("second case");
 		if(e.getCase(depart.getLigne(), depart.getColonne()).getPiece().estValide(depart, arrivee)) //vérifier estValide(), exclue les pions en diagonale
 		{	
 			if(e.cheminPossible(depart, arrivee)) //vérifier cheminPossible()
@@ -210,7 +196,6 @@ public class FenetreJeu extends JFrame
 			    {	
 			    	//Si la couleur de la piece est la meme que la couleur du champ de texte (
 			    	if(!e.getCase(ligneClic, colonneClic).getPiece().getCouleur().equals(champTexte.getText())) {
-			    		System.out.println("its the other colors turn!!!!!! \n\n");
 			    		return;
 			    	}
 			    }
@@ -223,33 +208,26 @@ public class FenetreJeu extends JFrame
 
 				alterne();//Change la couleur de la pièce
 				champTexte.setText(couleurControle);
-				System.out.println("Second case done!\n\n");
 				return;
 			}
 		}
     }
 	  
     // 3ème cas : clique sur une case occupee et tampon plein : case d'arrivee + pion en diagonale
-    //À compléter
-    System.out.println("THIRD CASEEEEEEEE" + (e.getCase(ligneClic, colonneClic).estOccupee() && pieceTampon != null));
 	if (e.getCase(ligneClic, colonneClic).estOccupee() && pieceTampon != null)
 	{
 		arrivee = new Position(ligneClic, colonneClic); //Reassigner arrivee 
-		System.out.println("(" + depart.getLigne() +", "+depart.getColonne()+") -> (" +arrivee.getLigne()+", "+arrivee.getColonne()+")");
 		if(e.getCase(depart.getLigne(), depart.getColonne()).getPiece().estValide(depart, arrivee))
 		{
 			if (e.cheminPossible(depart, arrivee))
 			{
-				System.out.println(e.getCase(depart).getPiece().getNom());
 				if(e.getCase(depart).getPiece() != null) //Si la piece existe
 			    {	
 			    	//Si la couleur de la piece est la meme que la couleur du champ de texte (
 			    	if(!e.getCase(depart).getPiece().getCouleur().equals(champTexte.getText())) {
-			    		System.out.println("third case same color check!");
 			    		return;
 			    	}
 			    }
-				System.out.println(true);
 				e.getCase(arrivee.getLigne(), arrivee.getColonne()).ajouterPiece(pieceTampon);
 				e.getCase(depart.getLigne(), depart.getColonne()).enleverPiece();
 				tab[arrivee.getLigne()][arrivee.getColonne()].setIcon(iconeTampon);
@@ -267,22 +245,12 @@ public class FenetreJeu extends JFrame
         	tab[depart.getLigne()][depart.getColonne()].setIcon(null);
         	pieceTampon = null;
         	alterne();
-			//{
-    //À compléter        
-			//}
         }
-        
-      
   }
-//  else // 4e cas rien a faire tampon vide et case vide
-    {
-    }
-    
   }
   }//Fin méthode mouseClicked()
   public void alterne ()
   {
-	  System.out.println("Couleur alterner!!!!");
   if (couleurControle == "blanc")
     couleurControle = "noir";
   else
